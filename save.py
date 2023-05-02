@@ -6,7 +6,7 @@ from mfrc522 import SimpleMFRC522
 reader = SimpleMFRC522()
 
 def save_to_file(id, text):
-    with open("rfid.txt", "a") as file:
+    with open("rfid.txt", "w") as file:
         file.write(f"ID: {id}\nText: {text}\n")
 
 try:
