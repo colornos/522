@@ -9,15 +9,15 @@ reader = SimpleMFRC522()
 
 def save_to_file(id, text):
     with open("rfid.txt", "w") as file:
-        file.write(f"ID: {id}\nText: {text}\n")
+        file.write(f"ID: {id}")
 
 try:
     while True:
         print("Hold a tag near the reader")
         id, text = reader.read()
-        print("ID: %s\nText: %s" % (id, text))
-        save_to_file(id, text)
-        sleep(5)
+        print("ID: %s" % (id))
+        save_to_file(id)
+        sleep(2)
 except KeyboardInterrupt:
     print("Program terminated")
     GPIO.cleanup()
